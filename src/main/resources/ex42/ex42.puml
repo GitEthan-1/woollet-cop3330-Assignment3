@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class App42 {
+    loadPeople()
+}
+
+class Person {
+    First name
+    Last name
+    Salary
+
+    toString()
+    Person( fname , lname , sal )
+}
+
+class FileHandling {
+    getInputStream()
+    getOutputStream()
+}
+
+App42 o--> Person
+App42 --> FileHandling
+
+@enduml

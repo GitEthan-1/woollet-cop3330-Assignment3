@@ -115,8 +115,7 @@ public class App41 {
 	}
 
 	public static FileReader getInputFile(File projectDirectory) throws FileNotFoundException {
-		FileReader inputFile = new FileReader(projectDirectory + "\\src\\main\\resources\\ex41\\exercise41_input.txt");
-		return inputFile;
+		return new FileReader(projectDirectory + "\\src\\main\\resources\\ex41\\exercise41_input.txt");
 	}
 
 	public static File getProjectDirectory() {
