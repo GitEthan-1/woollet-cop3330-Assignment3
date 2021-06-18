@@ -106,7 +106,7 @@ public class App41 {
 	}
 
 
-	private static File getOutputFile(File projectDirectory) throws IOException {
+	public static File getOutputFile(File projectDirectory) throws IOException {
 		File outputFile = new File(projectDirectory + "\\src\\main\\resources\\ex41\\exercise41_output.txt");
 		if (!outputFile.exists()) {
 			outputFile.createNewFile();
@@ -114,12 +114,12 @@ public class App41 {
 		return outputFile;
 	}
 
-	private static FileReader getInputFile(File projectDirectory) throws FileNotFoundException {
+	public static FileReader getInputFile(File projectDirectory) throws FileNotFoundException {
 		FileReader inputFile = new FileReader(projectDirectory + "\\src\\main\\resources\\ex41\\exercise41_input.txt");
 		return inputFile;
 	}
 
-	private static File getProjectDirectory() {
+	public static File getProjectDirectory() {
 		return new File(System.getProperty ("user.dir"));
 	}
 
