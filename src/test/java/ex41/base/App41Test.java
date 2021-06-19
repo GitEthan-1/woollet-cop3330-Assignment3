@@ -23,12 +23,14 @@ class App41Test {
 		if(!Arrays.toString(directory).contains("pom.xml")) { fail(); }
 		if(!Arrays.toString(directory).contains("src")) { fail(); }
 		if(!Arrays.toString(directory).contains(".gitignore")) { fail(); }
+		if(!Arrays.toString(directory).contains("output")) { fail(); }
+		if(!Arrays.toString(directory).contains("input")) { fail(); }
 	}
 
 	@Test
 	void getOutputFile() throws IOException {
 
-		File test = App41.getOutputFile(App41.getProjectDirectory());
+		File test = App41.getOutputFile("exercise41_test_output.txt");
 
 		if(!test.exists()) { fail(); }
 	}

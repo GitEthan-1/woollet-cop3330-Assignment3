@@ -51,19 +51,11 @@ public class App41 {
 		PrintStream console = System.out;
 
 		try{
-			// open input file from project resources folder
-			File projectDirectory = getProjectDirectory();
-
-			// traverse to resource folder and open proper input test file
-
-			// find absolute file directory of project
-			FileReader inputFile = getInputFile(projectDirectory);
+			// find input file and create buffered reader for reader for the input stream of chars
+			inFile = new BufferedReader( getInputFile("exercise41_input.txt"));
 
 
 			// read in file data and store onto an arraylist
-
-			// create new file scanner with input file path name
-			inFile = new BufferedReader(inputFile);
 
 			// create new array list and fill with data from input file
 			ArrayList<String> names = NameSorter.getNames(inFile);
@@ -76,7 +68,7 @@ public class App41 {
 			// print out new sorted and formatted list onto output file in resources folder
 
 			//create new output file within resource folder
-			File outputFile = getOutputFile(projectDirectory);
+			File outputFile = getOutputFile("exercise41_output.txt");
 
 			// format a string to be printed out to new file
 			String output = NameSorter.getOutput(names);
@@ -97,7 +89,7 @@ public class App41 {
 				// reset the system output
 				System.setOut(console);
 
-				System.out.println("TASK COMPLETED SUCCESSFULLY");
+				//System.out.println("TASK COMPLETED SUCCESSFULLY");  FOR TESTING
 			}
 			catch (NullPointerException npe) {
 				npe.printStackTrace();
@@ -106,16 +98,20 @@ public class App41 {
 	}
 
 
-	public static File getOutputFile(File projectDirectory) throws IOException {
-		File outputFile = new File(projectDirectory + "\\src\\main\\resources\\ex41\\exercise41_output.txt");
+	public static File getOutputFile(String outputFileName) throws IOException {
+		if(!new File(getProjectDirectory() + "\\output").exists()) {
+			File outputDirectory = new File(getProjectDirectory() + "\\output");
+			outputDirectory.mkdir();
+		}
+		File outputFile = new File(getProjectDirectory() + "\\output\\" + outputFileName);
 		if (!outputFile.exists()) {
 			outputFile.createNewFile();
 		}
 		return outputFile;
 	}
 
-	public static FileReader getInputFile(File projectDirectory) throws FileNotFoundException {
-		return new FileReader(projectDirectory + "\\src\\main\\resources\\ex41\\exercise41_input.txt");
+	public static FileReader getInputFile(String inputFileName) throws FileNotFoundException {
+		return new FileReader(getProjectDirectory() + "\\input\\" + inputFileName);
 	}
 
 	public static File getProjectDirectory() {

@@ -66,13 +66,13 @@ public class App42 {
 		// write table string onto file
 	//close input and output streams
 
-	public static void main(String[] args) throws IOException {
-		BufferedReader in = FileHandling.getInputStream();
-		ArrayList<Person> people = loadPeople(in);
-	}
+//	public static void main(String[] args) throws IOException {
+//		BufferedReader in = FileHandling.getInputStream();
+//		ArrayList<Person> people = loadPeople(in);
+//	}
 
-	private static ArrayList<Person> loadPeople(BufferedReader in) {
-		
-	}
+//	private static ArrayList<Person> loadPeople(BufferedReader in) {
+//
+//	}
 
 }
