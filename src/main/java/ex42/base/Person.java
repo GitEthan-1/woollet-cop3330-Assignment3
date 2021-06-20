@@ -1,10 +1,13 @@
 package ex42.base;
 
+import java.util.LinkedList;
+
 public class Person {
+
 	public static final int COLUMN_SIZE = 10;
-	private static String FIRST_NAME = "";
-	private static String LAST_NAME = "";
-	private static int SALARY = 0;
+	private String FIRST_NAME = "";
+	private String LAST_NAME = "";
+	private int SALARY = 0;
 
 	public String getFirstName() {
 		return FIRST_NAME;
@@ -27,14 +30,41 @@ public class Person {
 	}
 
 	private void setSalary(int sal) {
-		Person.SALARY = sal;
+		SALARY = sal;
 	}
 
-	public Person(String fname, String lname, int sal) {
-		setFirstName(fname);
-		setLastName(lname);
-		setSalary(sal);
+//	public Person(String fname, String lname, int sal) {
+//		setFirstName(fname);
+//		setLastName(lname);
+//		setSalary(sal);
+//	}
+
+	public Person(String parse) {
+		LinkedList<String> parsed = parsePerson(parse);
+
+		setFirstName(parsed.remove(0));
+		setLastName(parsed.remove(0));
+		setSalary(Integer.parseInt(parsed.remove(0)));
+
 	}
+
+	private LinkedList<String> parsePerson(String parse) {
+		char[] parseList = parse.toCharArray();
+		LinkedList<String> parsed = new LinkedList<>();
+
+		int offset = 0;
+
+		for (int i = 0; i < parseList.length; i++) {
+
+			if(parseList[i] == ',') {
+				parsed.add(String.copyValueOf(parseList, offset, i-offset));
+				offset = i+1;
+			}
+		}
+		parsed.add(String.copyValueOf(parseList, offset, parseList.length-offset));
+		return parsed;
+	}
+
 
 	@Override
 	public String toString () {
@@ -55,5 +85,14 @@ public class Person {
 			lname.append(" ");
 		}
 		return lname;
+	}
+
+	public static String getTable(LinkedList<Person> people) {
+		StringBuilder output = new StringBuilder("Last      First     Salary\n" + "--------------------------\n");
+		for (Person individual : people) {
+			output.append(individual);
+		}
+
+		return output.toString();
 	}
 }

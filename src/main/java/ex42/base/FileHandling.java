@@ -8,17 +8,17 @@ import java.io.*;
 
 public class FileHandling {
 
-	public static FileWriter getOutputStream() throws IOException {
-		File out = new File(getProjectDirectory() + "\\src\\main\\resources\\ex42\\exercise42_output.txt");
-		if (!out.exists()) {
-			out.createNewFile();
-		}
+//	public static FileWriter getOutputStream(String outputFileName) throws IOException {
+//		File out = new File(getProjectDirectory() + "\\output\\" + outputFileName);
+//		if (!out.exists()) {
+//			out.createNewFile();
+//		}
+//
+//		return new FileWriter(out);
+//	}
 
-		return new FileWriter(out);
-	}
-
-	public static BufferedReader getInputStream() throws FileNotFoundException {
-		return new BufferedReader(new FileReader(getProjectDirectory() + "\\src\\main\\resources\\ex42\\exercise42_input.txt"));
+	public static BufferedReader getInputStream(String inputFileName) throws FileNotFoundException {
+		return new BufferedReader(new FileReader(getProjectDirectory() + "\\input\\" + inputFileName));
 	}
 
 	private static File getProjectDirectory() {

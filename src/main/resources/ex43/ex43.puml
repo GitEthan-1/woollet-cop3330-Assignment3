@@ -1,0 +1,32 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class app43 {
+    *getYesorNo(String)
+    *getString(String)
+}
+
+class WebsiteGenerator {
+    #String websiteName
+    #String authorName
+    #boolean js
+    #boolean css
+    #String rootDirectory
+    #BufferedReader index
+
+    *getRootDirectory()
+    *getIndexWriter()
+    *generateIndexContent( String title, String author )
+
+    +createWebsiteDirectory()
+    +createWebsiteFile( String title )
+    +createJSDirectory()
+    +createCSSDirectory()
+    +createIndex( String title, String author )
+
+    +buildWebsite( String title, String author )
+}
+
+app43 *--|> WebsiteGenerator
+
+@enduml

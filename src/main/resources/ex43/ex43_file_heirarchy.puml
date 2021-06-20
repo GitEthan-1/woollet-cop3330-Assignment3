@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/object-diagram
+
+object website {
+    <Website-Title>
+     index.html
+     js
+     css
+}
+
+object index.html {
+    Website-Title
+    Author
+}
+
+object js {
+    javascript files
+}
+
+object css {
+    css files
+}
+
+website *--> js
+website *--> css
+website *--> index.html
+
+@enduml

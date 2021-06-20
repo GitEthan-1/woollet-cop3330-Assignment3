@@ -61,18 +61,34 @@ public class App42 {
 	// create tabulated string of Person data
 		// create new string with table header
 		// format person objects into strings and append to table string
-	// print table string to new output file
-		// create or find output file and create new FileWriter
-		// write table string onto file
-	//close input and output streams
+	// print table string to terminal output
 
-//	public static void main(String[] args) throws IOException {
-//		BufferedReader in = FileHandling.getInputStream();
-//		ArrayList<Person> people = loadPeople(in);
-//	}
+	public static void main(String[] args) throws IOException {
+		BufferedReader in = FileHandling.getInputStream("exercise42_input.txt");
+		LinkedList<String> fileData = loadFileData(in);
+		LinkedList<Person> people = createPeople(fileData);
 
-//	private static ArrayList<Person> loadPeople(BufferedReader in) {
-//
-//	}
+		System.out.println(Person.getTable(people));
+	}
+
+
+	private static LinkedList<String> loadFileData(BufferedReader in) throws IOException {
+		LinkedList<String> fileData = new LinkedList<>();
+		String line;
+		while((line = in.readLine()) != null) {
+			fileData.add(line);
+		}
+		return fileData;
+	}
+
+
+	private static LinkedList<Person> createPeople(LinkedList<String> fileData) {
+		LinkedList<Person> people = new LinkedList<>();
+		for(String data : fileData) {
+			people.add(new Person(data));
+		}
+		return people;
+	}
+
 
 }
