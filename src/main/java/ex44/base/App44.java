@@ -65,6 +65,7 @@ public class App44 {
 		ArrayList<Product> products =  Parser.loadProducts();
 
 		String output = "";
+
 		while (output.contentEquals("")) {
 			String search = getString("What is the product name? ");
 			output = searchProducts(products,search);
