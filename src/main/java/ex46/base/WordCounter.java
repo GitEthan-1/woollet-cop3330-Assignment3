@@ -66,8 +66,7 @@ public class WordCounter {
 			total += word.getCount();
 		return total;
 	}
-
-	//rate is the number of word to '*' on the bar graph;
+	
 	public String toGraph() {
 
 		StringBuilder tempWord;
