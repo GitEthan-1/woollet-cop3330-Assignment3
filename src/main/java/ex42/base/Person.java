@@ -1,3 +1,7 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 3 Solution
+ *  Copyright 2021 first_name last_name
+ */
 package ex42.base;
 
 import java.util.LinkedList;
@@ -21,23 +25,17 @@ public class Person {
 		return SALARY;
 	}
 
-	private void setFirstName(String firstName) {
+	public void setFirstName(String firstName) {
 		FIRST_NAME = firstName;
 	}
 
-	private void setLastName(String lastName) {
+	public void setLastName(String lastName) {
 		LAST_NAME = lastName;
 	}
 
-	private void setSalary(int sal) {
+	public void setSalary(int sal) {
 		SALARY = sal;
 	}
-
-//	public Person(String fname, String lname, int sal) {
-//		setFirstName(fname);
-//		setLastName(lname);
-//		setSalary(sal);
-//	}
 
 	public Person(String parse) {
 		LinkedList<String> parsed = parsePerson(parse);
@@ -64,7 +62,6 @@ public class Person {
 		parsed.add(String.copyValueOf(parseList, offset, parseList.length-offset));
 		return parsed;
 	}
-
 
 	@Override
 	public String toString () {

@@ -1,0 +1,43 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class App {
+    *Scanner
+
+    *getString()
+    *searchProducts()
+}
+class Parser {
+    *JSONParser parse
+
+    +loadProducts()
+
+    *getInFile()
+    *readJson( BufferedReader )
+}
+
+class Product {
+    *String name
+    *double price
+    *int quantity
+
+    +getName()
+    +getPrice()
+    +getQuantity()
+    +setName()
+    +setPrice()
+    +setQuantity()
+
+    +toString()
+    +Product(String, double, int)
+}
+object ProductCatalog
+object File
+
+App --> Parser
+Parser o--> File
+Parser --> ProductCatalog
+ProductCatalog o--> Product
+App o--> ProductCatalog
+
+@enduml

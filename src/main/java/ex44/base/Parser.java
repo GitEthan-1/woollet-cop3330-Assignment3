@@ -1,3 +1,7 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 3 Solution
+ *  Copyright 2021 first_name last_name
+ */
 package ex44.base;
 
 import org.json.simple.JSONArray;
@@ -7,10 +11,9 @@ import org.json.simple.parser.ParseException;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Parser {
-	public static final JSONParser parse = new JSONParser();
+	private static final JSONParser parse = new JSONParser();
 
 	private static BufferedReader getInFile() throws IOException {
 		return new BufferedReader(new FileReader(System.getProperty("user.dir") + "\\input\\exercise44_input.json"));
@@ -38,8 +41,6 @@ public class Parser {
 			catalog.add(new Product(name,price,quantity));
 
 		}
-		System.out.println("here");
-		System.out.println(Arrays.toString(catalog.toArray()));
 		return catalog;
 	}
 }

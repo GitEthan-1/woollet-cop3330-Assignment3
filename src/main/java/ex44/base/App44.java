@@ -1,3 +1,7 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 3 Solution
+ *  Copyright 2021 first_name last_name
+ */
 package ex44.base;
 
 import org.json.simple.parser.ParseException;
@@ -60,7 +64,8 @@ public class App44 {
 			// if it exists print data to terminal
 			// if it doesnt, say it doesnt exist
 
-	public static final Scanner in = new Scanner(System.in);
+	private static final Scanner in = new Scanner(System.in);
+
 	public static void main(String[] args) throws IOException, ParseException {
 		ArrayList<Product> products =  Parser.loadProducts();
 
@@ -80,12 +85,12 @@ public class App44 {
 
 	}
 
-	public static String getString (String message) {
+	private static String getString (String message) {
 		System.out.print(message);
 		return in.nextLine();
 	}
 
-	public static String searchProducts(ArrayList<Product> products, String query) {
+	private static String searchProducts(ArrayList<Product> products, String query) {
 		String output = "";
 			for	(Product item : products) {
 				if(item.getName().equalsIgnoreCase(query)) {

@@ -8,15 +8,6 @@ import java.io.*;
 
 public class FileHandling {
 
-//	public static FileWriter getOutputStream(String outputFileName) throws IOException {
-//		File out = new File(getProjectDirectory() + "\\output\\" + outputFileName);
-//		if (!out.exists()) {
-//			out.createNewFile();
-//		}
-//
-//		return new FileWriter(out);
-//	}
-
 	public static BufferedReader getInputStream(String inputFileName) throws FileNotFoundException {
 		return new BufferedReader(new FileReader(getProjectDirectory() + "\\input\\" + inputFileName));
 	}

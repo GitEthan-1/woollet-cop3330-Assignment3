@@ -1,32 +1,35 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-class app43 {
+class App {
+    Scanner 'System.in'
+
     *getYesorNo(String)
     *getString(String)
 }
 
 class WebsiteGenerator {
-    #String websiteName
-    #String authorName
-    #boolean js
-    #boolean css
-    #String rootDirectory
-    #BufferedReader index
+    String websiteName
+    String authorName
+    boolean js
+    boolean css
+    BufferedReader index
 
-    *getRootDirectory()
-    *getIndexWriter()
-    *generateIndexContent( String title, String author )
+    String rootDirectory
 
-    +createWebsiteDirectory()
-    +createWebsiteFile( String title )
-    +createJSDirectory()
-    +createCSSDirectory()
-    +createIndex( String title, String author )
+    +WebsiteGenerator( String, String, boolean, boolean )
 
-    +buildWebsite( String title, String author )
+    *createWebsiteDirectory()
+    *createWebsiteNameDirectory()
+    *createJSDirectory()
+    *createCSSDirectory()
+    *createIndex()
+    *generateIndexContent()
+
+
 }
-
-app43 *--|> WebsiteGenerator
+object websiteFolder
+App *--> WebsiteGenerator
+WebsiteGenerator -.> websiteFolder
 
 @enduml

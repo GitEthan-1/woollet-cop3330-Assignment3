@@ -1,3 +1,7 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 3 Solution
+ *  Copyright 2021 first_name last_name
+ */
 package ex45.base;
 
 import java.io.*;
@@ -38,7 +42,8 @@ import java.util.Scanner;
  */
 
 public class App45 {
-	public static final Scanner in = new Scanner(System.in);
+	private static final Scanner in = new Scanner(System.in);
+
 	public static void main(String[] args) throws IOException {
 		BufferedReader input = new BufferedReader(FileHandler.getInputFile("exercise45_input.txt"));
 
@@ -51,7 +56,7 @@ public class App45 {
 
 	}
 
-	public static String getString (String message) {
+	private static String getString (String message) {
 		System.out.print(message);
 		return in.nextLine();
 	}

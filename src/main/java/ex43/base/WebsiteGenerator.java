@@ -1,3 +1,7 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 3 Solution
+ *  Copyright 2021 first_name last_name
+ */
 package ex43.base;
 
 import java.io.File;
@@ -33,28 +37,28 @@ public class WebsiteGenerator {
 				System.out.println("Created ./website/"+WEBSITE_NAME+"/css/");
 	}
 
-	public boolean createWebsiteDirectory() {
+	private boolean createWebsiteDirectory() {
 		new File(rootDirectory + "\\website").mkdir();
 		return createWebsiteNameDirectory();
 	}
 
-	public boolean createWebsiteNameDirectory() {
+	private boolean createWebsiteNameDirectory() {
 		new File(rootDirectory + "\\website\\" + WEBSITE_NAME).mkdir();
 		return new File(rootDirectory + "\\website\\" + WEBSITE_NAME).isDirectory();
 	}
 
-	public boolean createJSDirectory() {
+	private boolean createJSDirectory() {
 		new File(rootDirectory + "\\website\\" + WEBSITE_NAME + "\\js").mkdir();
 		return new File(rootDirectory + "\\website\\" + WEBSITE_NAME + "\\js").isDirectory();
 	}
 
-	public boolean createCSSDirectory() {
+	private boolean createCSSDirectory() {
 		new File(rootDirectory + "\\website\\" + WEBSITE_NAME + "\\css").mkdir();
 		return new File(rootDirectory + "\\website\\" + WEBSITE_NAME + "\\css").isDirectory();
 
 	}
 
-	public boolean createIndex() throws IOException {
+	private boolean createIndex() throws IOException {
 
 		File newIndex = new File(rootDirectory + "\\website\\" + WEBSITE_NAME + "\\index.html");
 		if(!newIndex.createNewFile())

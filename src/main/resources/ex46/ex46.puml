@@ -1,0 +1,46 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class App
+
+object File{
+    text
+}
+
+class FileHandler {
+    *getProjectDirectory()
+    +getInputFile()
+    +readFile()
+}
+
+class Word {
+    *String Word
+    *int Count
+
+    +getWord()
+    +getCount()
+    +setWord( String )
+    +setCount( int )
+
+    +toString()
+    +Word( String, int )
+}
+
+class WordCounter {
+    +ArrayList<Word> WordCount
+    +ArrayList<String> AllWords
+
+    +WordCounter()
+    +addWords( String )
+    *updateWordCount()
+    *sortByFrequency
+    +getUniqueTotal()
+    +getTotalWords()
+    +toGraph()
+}
+
+App --> FileHandler
+FileHandler o--> File
+App o--> WordCounter
+WordCounter o--> Word
+@enduml

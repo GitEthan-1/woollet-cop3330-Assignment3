@@ -1,3 +1,7 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 3 Solution
+ *  Copyright 2021 first_name last_name
+ */
 package ex43.base;
 
 import java.io.IOException;
@@ -56,12 +60,12 @@ public class App43 {
 
 	}
 
-	public static String getString (String message) {
+	private static String getString (String message) {
 		System.out.print(message);
 		return in.nextLine();
 	}
 
-	public static boolean getYesOrNo(String message) {
+	private static boolean getYesOrNo(String message) {
 		System.out.print(message);
 		if(in.nextLine().toLowerCase(Locale.ROOT).charAt(0) == 'y')
 			return true;

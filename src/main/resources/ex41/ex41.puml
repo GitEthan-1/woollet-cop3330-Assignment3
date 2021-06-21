@@ -1,16 +1,28 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-class NameList {
-    display()
-    loadNames()
-    sort()
-    printToFile()
-    openFile()
+class NameSorter {
+    getOutput()
+    getNames()
 }
 
-class file
+class file{
+    CSV names
+}
 
-NameList o--> file
+class App {
+    getOutputFile()
+    getInputFile()
+    getProjectDirectory()
+}
+
+object NameList
+
+App *--> file
+App *--> NameSorter
+NameSorter *--> NameList
+NameList o-.-> App
+
+
 
 @enduml
