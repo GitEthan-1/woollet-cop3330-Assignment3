@@ -46,6 +46,17 @@ import java.io.IOException;
 
 public class App46 {
 
+	// locate input file
+	// create new file reader
+	// read in file string
+	// parse to a String array
+	// add array to total words
+	// go through word object array and update count of any new instances of a word
+		//if a word does not yet exist, create one
+	// sort updated word object array order by word frequency
+	// tabulate word object array to a graph in string form
+	// output graph sting to console
+
 	public static void main(String[] args) throws IOException {
 		BufferedReader input = new BufferedReader(FileHandler.getInputFile("exercise46_input.txt"));
 		String fileData = FileHandler.readFile(input);

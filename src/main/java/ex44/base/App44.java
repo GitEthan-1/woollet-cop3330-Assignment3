@@ -90,7 +90,7 @@ public class App44 {
 		return in.nextLine();
 	}
 
-	private static String searchProducts(ArrayList<Product> products, String query) {
+	public static String searchProducts(ArrayList<Product> products, String query) {
 		String output = "";
 			for	(Product item : products) {
 				if(item.getName().equalsIgnoreCase(query)) {

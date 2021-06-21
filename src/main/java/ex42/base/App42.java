@@ -82,7 +82,7 @@ public class App42 {
 	}
 
 
-	private static LinkedList<Person> createPeople(LinkedList<String> fileData) {
+	public static LinkedList<Person> createPeople(LinkedList<String> fileData) {
 		LinkedList<Person> people = new LinkedList<>();
 		for(String data : fileData) {
 			people.add(new Person(data));

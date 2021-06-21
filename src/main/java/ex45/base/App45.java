@@ -42,6 +42,15 @@ import java.util.Scanner;
  */
 
 public class App45 {
+
+	// locate input file and create new reader
+	// read string data from reader
+	// create new string with replaced word
+	// create new file
+	// create new writer
+	// write new string to output file
+	// close ouput stream
+
 	private static final Scanner in = new Scanner(System.in);
 
 	public static void main(String[] args) throws IOException {

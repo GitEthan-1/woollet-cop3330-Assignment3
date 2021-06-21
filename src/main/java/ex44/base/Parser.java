@@ -20,7 +20,6 @@ public class Parser {
 	}
 
 	public static ArrayList<Product> loadProducts() throws IOException, ParseException {
-
 		return readJson(getInFile());
 	}
 

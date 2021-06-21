@@ -46,6 +46,12 @@ public class Person {
 
 	}
 
+	public Person(String FIRST_NAME, String LAST_NAME, int SALARY) {
+		this.FIRST_NAME = FIRST_NAME;
+		this.LAST_NAME = LAST_NAME;
+		this.SALARY = SALARY;
+	}
+
 	private LinkedList<String> parsePerson(String parse) {
 		char[] parseList = parse.toCharArray();
 		LinkedList<String> parsed = new LinkedList<>();

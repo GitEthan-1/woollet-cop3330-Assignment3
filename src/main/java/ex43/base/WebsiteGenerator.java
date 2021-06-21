@@ -37,6 +37,10 @@ public class WebsiteGenerator {
 				System.out.println("Created ./website/"+WEBSITE_NAME+"/css/");
 	}
 
+	public WebsiteGenerator() {
+
+	}
+
 	private boolean createWebsiteDirectory() {
 		new File(rootDirectory + "\\website").mkdir();
 		return createWebsiteNameDirectory();

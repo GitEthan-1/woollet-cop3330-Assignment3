@@ -20,6 +20,7 @@ public class WordCounter {
 	public void addWords(String text) {
 		String[] newWordsArray = text.replace("\n", " ").split(" ");
 		allWords.addAll(Arrays.asList(newWordsArray));
+		allWords.removeIf(word -> word.equals(""));
 		updateWordCount();
 	}
 
@@ -66,7 +67,7 @@ public class WordCounter {
 			total += word.getCount();
 		return total;
 	}
-	
+
 	public String toGraph() {
 
 		StringBuilder tempWord;
@@ -76,7 +77,7 @@ public class WordCounter {
 			tempWord = new StringBuilder(word.getWord());
 
 			tempWord.append(":");
-			while(tempWord.length() < 11) {
+			while(tempWord.length() < 20) {
 				tempWord.append(" ");
 			}
 
